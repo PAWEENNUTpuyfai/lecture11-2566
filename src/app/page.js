@@ -122,7 +122,7 @@ export default function RegisFormPage() {
       </div>
 
       {/* Total Payment */}
-      <div>Total Payment : {computeTotalPayment} THB</div>
+      <div>Total Payment : {computeTotalPayment().toLocalString()} THB</div>
 
       {/* Register Button */}
       <button className="btn btn-success my-2" onClick={registerBtnOnClick}>
