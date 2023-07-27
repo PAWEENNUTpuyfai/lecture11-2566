@@ -55,7 +55,7 @@ export default function RegisFormPage() {
   };
   
   const registerBtnOnClick = () => {
-    alert(`Registration complete. Please pay money for ${computeTotalPayment(),toLocaleString()} THB.`);
+    alert(`Registration complete. Please pay money for ${computeTotalPayment().toLocaleString()} THB.`);
   };
 
   return (
