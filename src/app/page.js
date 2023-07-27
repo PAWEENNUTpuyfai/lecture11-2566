@@ -5,6 +5,7 @@ export default function RegisFormPage() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [plan , setPlan] = useState("");
+  const [gender , setGender] = useState(null);
   const [buyBottle, setBuyBottle] = useState(false);
   const [buyShoes, setBuyShoes] = useState(false);
   const [buyCap, setBuyCap] = useState(false);
@@ -19,6 +20,14 @@ export default function RegisFormPage() {
 
   const selectPlanOnChange = (event) =>{
     setPlan(even.target.value);
+  };
+
+  const radioGenderMaleOnChange = (event) =>{
+    setGender("male");
+  };
+  
+  const radioGenderFemaleOnChange = (event) =>{
+    setGender("female");
   };
   
   const computeTotalPayment = () => {};
@@ -54,7 +63,7 @@ export default function RegisFormPage() {
       <div>
         <label className="form-label">Plan</label>
         <select className="from-select"
-              onChange={slectPlanOnChange}
+              onChange={selectPlanOnChange}
               value={plan}
         >
           <option value="">Please select a Plan ...</option>
@@ -74,9 +83,11 @@ export default function RegisFormPage() {
       <div>
         <label className="form-label">Gender</label>
         <div>
-          <input className="me-2 form-check-input" type="radio" />
+          <input className="me-2 form-check-input" type="radio"
+        onChange = {radioGenderMaleOnChange}/>
           Male 👨
-          <input className="mx-2 form-check-input" type="radio" />
+          <input className="mx-2 form-check-input" type="radio"
+          onChange = {radioGenderFemaleOnChange}/>
           Female 👩
         </div>
       </div>
