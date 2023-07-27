@@ -36,7 +36,7 @@ export default function RegisFormPage() {
     else if(plan === "mini") total += 800;
     else if(plan === "half") total += 1200;
     else if(plan === "full") total += 1500;
-    if(buyBotte) total += 200;
+    if(buyBottle) total += 200;
     if(buyShoes) total += 600;
     if(buyCap) total += 400;
     return total;
