@@ -84,7 +84,7 @@ export default function RegisFormPage() {
       {/* Running Plan */}
       <div>
         <label className="form-label">Plan</label>
-        <select className="from-select"
+        <select className="form-select"
               onChange={selectPlanOnChange}
               value={plan}
         >
