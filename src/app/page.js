@@ -29,7 +29,15 @@ export default function RegisFormPage() {
   const radioGenderFemaleOnChange = (event) =>{
     setGender("female");
   };
-  
+
+  const computeTotalPayment = () => {
+    let total = 0;
+    if(plan === "funrun") total += 500;
+    else if(plan === "mini") total += 800;
+    else if(plan === "half") total += 1200;
+    else if(plan === "full") total += 1500;
+    return total;
+  }
   const computeTotalPayment = () => {};
 
   const registerBtnOnClick = () => {
@@ -84,10 +92,14 @@ export default function RegisFormPage() {
         <label className="form-label">Gender</label>
         <div>
           <input className="me-2 form-check-input" type="radio"
-        onChange = {radioGenderMaleOnChange}/>
+              onChange = {radioGenderMaleOnChange}
+              checked={gender === "male"}
+                />
           Male 👨
           <input className="mx-2 form-check-input" type="radio"
-          onChange = {radioGenderFemaleOnChange}/>
+              onChange = {radioGenderFemaleOnChange}
+              checked={gender === "female"}
+            />
           Female 👩
         </div>
       </div>
@@ -110,7 +122,7 @@ export default function RegisFormPage() {
       </div>
 
       {/* Total Payment */}
-      <div>Total Payment : ... THB</div>
+      <div>Total Payment : {computeTotalPayment} THB</div>
 
       {/* Register Button */}
       <button className="btn btn-success my-2" onClick={registerBtnOnClick}>
