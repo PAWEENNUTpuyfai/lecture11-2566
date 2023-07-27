@@ -36,10 +36,24 @@ export default function RegisFormPage() {
     else if(plan === "mini") total += 800;
     else if(plan === "half") total += 1200;
     else if(plan === "full") total += 1500;
+    if(buyBotte) total += 200;
+    if(buyShoes) total += 600;
+    if(buyCap) total += 400;
     return total;
-  }
-  const computeTotalPayment = () => {};
+  };
 
+  const cbBuyShoesOnChange = (event) => {
+    setBuyShoes(event.target.checked);
+  };
+
+  const cbBuyCapOnChange = (event) => {
+    setBuyCap(event.target.checked);
+  };
+
+  const cbBuyBottleOnChange = (event) =>{
+    setBuyBottle(event.target.checked);
+  };
+  
   const registerBtnOnClick = () => {
     alert(`Registration complete. Please pay money for ... THB.`);
   };
@@ -108,15 +122,27 @@ export default function RegisFormPage() {
       <div>
         <label className="form-label">Extra Item(s)</label>
         <div>
-          <input className="form-check-input" type="checkbox" />{" "}
+          <input className="form-check-input" 
+            type="checkbox" 
+            onChange={cbBuyBottleOnChange}
+            checked ={buyBottle}
+        />{" "}
           <label className="form-check-label">Bottle 🍼 (200 THB)</label>
         </div>
         <div>
-          <input className="form-check-input" type="checkbox" />{" "}
+          <input className="form-check-input" 
+              type="checkbox" 
+              onChange={cbBuyShoesOnChange}
+            checked ={buyShoes}      
+          />{" "}
           <label className="form-check-label">Shoes 👟 (600 THB)</label>
         </div>
         <div>
-          <input className="form-check-input" type="checkbox" />{" "}
+          <input className="form-check-input"
+                type="checkbox" 
+                 onChange={cbBuyCapOnChange}
+                checked ={buyCap}       
+           />{" "}
           <label className="form-check-label">Cap 🧢 (400 THB)</label>
         </div>
       </div>
