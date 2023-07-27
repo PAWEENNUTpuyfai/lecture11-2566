@@ -48,6 +48,12 @@ export default function RegisFormPage() {
       {/* Running Plan */}
       <div>
         <label className="form-label">Plan</label>
+        <select className="from-select">
+          <option>Fun run 5.5 Km (500 THB)</option>
+          <option>Mini Marathon 10 Km (800 THB)</option>
+          <option> Half Marathon 21 Km (1,200 THB)</option>
+          <option>Full Marathon 42.195 Km (1,500 THB)</option>
+        </select>
         {/* Fun run 5.5 Km (500 THB)
           Mini Marathon 10 Km (800 THB)
           Half Marathon 21 Km (1,200 THB)
