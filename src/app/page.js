@@ -57,12 +57,13 @@ export default function RegisFormPage() {
               onChange={slectPlanOnChange}
               value={plan}
         >
-          <option>Please select a Plan ...</option>
+          <option value="">Please select a Plan ...</option>
           <option value="funrun">Fun run 5.5 Km (500 THB)</option>
           <option value="mini">Mini Marathon 10 Km (800 THB)</option>
           <option value="half"> Half Marathon 21 Km (1,200 THB)</option>
           <option value="full">Full Marathon 42.195 Km (1,500 THB)</option>
         </select>
+        {plan}
         {/* Fun run 5.5 Km (500 THB)
           Mini Marathon 10 Km (800 THB)
           Half Marathon 21 Km (1,200 THB)
