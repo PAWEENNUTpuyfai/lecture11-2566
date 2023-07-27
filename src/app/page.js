@@ -19,7 +19,7 @@ export default function RegisFormPage() {
   };
 
   const selectPlanOnChange = (event) =>{
-    setPlan(even.target.value);
+    setPlan(event.target.value);
   };
 
   const radioGenderMaleOnChange = (event) =>{
@@ -55,7 +55,7 @@ export default function RegisFormPage() {
   };
   
   const registerBtnOnClick = () => {
-    alert(`Registration complete. Please pay money for ... THB.`);
+    alert(`Registration complete. Please pay money for ${computeTotalPayment(),toLocaleString()} THB.`);
   };
 
   return (
