@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function RegisFormPage() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
+  const [plan , setPlan] = useState("");
   const [buyBottle, setBuyBottle] = useState(false);
   const [buyShoes, setBuyShoes] = useState(false);
   const [buyCap, setBuyCap] = useState(false);
@@ -16,6 +17,10 @@ export default function RegisFormPage() {
     setLname(event.target.value);
   };
 
+  const selectPlanOnChange = (event) =>{
+    setPlan(even.target.value);
+  };
+  
   const computeTotalPayment = () => {};
 
   const registerBtnOnClick = () => {
@@ -48,11 +53,15 @@ export default function RegisFormPage() {
       {/* Running Plan */}
       <div>
         <label className="form-label">Plan</label>
-        <select className="from-select">
-          <option>Fun run 5.5 Km (500 THB)</option>
-          <option>Mini Marathon 10 Km (800 THB)</option>
-          <option> Half Marathon 21 Km (1,200 THB)</option>
-          <option>Full Marathon 42.195 Km (1,500 THB)</option>
+        <select className="from-select"
+              onChange={slectPlanOnChange}
+              value={plan}
+        >
+          <option>Please select a Plan ...</option>
+          <option value="funrun">Fun run 5.5 Km (500 THB)</option>
+          <option value="mini">Mini Marathon 10 Km (800 THB)</option>
+          <option value="half"> Half Marathon 21 Km (1,200 THB)</option>
+          <option value="full">Full Marathon 42.195 Km (1,500 THB)</option>
         </select>
         {/* Fun run 5.5 Km (500 THB)
           Mini Marathon 10 Km (800 THB)
