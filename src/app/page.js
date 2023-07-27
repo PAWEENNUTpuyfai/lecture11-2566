@@ -154,6 +154,14 @@ export default function RegisFormPage() {
       <button className="btn btn-success my-2" onClick={registerBtnOnClick}>
         Register
       </button>
+        <button
+          className ="btn btn-danger"
+            onclick={()=>{
+              setPlan("");
+            }}
+        >
+        Reset from
+        </button>
     </div>
   );
 }
